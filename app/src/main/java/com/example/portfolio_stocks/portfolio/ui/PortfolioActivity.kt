@@ -72,7 +72,7 @@ class PortfolioActivity : BaseActivity() {
         binding.bottomNavViewImage.apply {
             setImageResource(R.drawable.ic_launcher_background)
         }
-        binding.bottomNavViewText.text = "Portfolio"
+        binding.bottomNavViewText.setText(R.string.Portfolio)
 
         binding.profitLoss.isVisible = true
         binding.profitLoss.apply {
@@ -125,9 +125,9 @@ class PortfolioActivity : BaseActivity() {
             setBackgroundColor(ContextCompat.getColor(this@PortfolioActivity, R.color.grey))
         }
 
-        binding.expandedViewCurrentValue.text = "Current Value*"
-        binding.expandedViewTotalInvestment.text = "Total Investment*"
-        binding.expandedViewTodayProfitLoss.text = "Today's Profit&Loss*"
+        binding.expandedViewCurrentValue.setText(R.string.current_value)
+        binding.expandedViewTotalInvestment.setText(R.string.total_investment)
+        binding.expandedViewTodayProfitLoss.setText(R.string.today_p_l)
 
         if (portfolioVM.getTotalInvestment(portfolioData) > 0) {
             binding.expandedViewTotalInvestmentAmount.setTextColor(

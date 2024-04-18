@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">portfolio_stocks</string>
     <string name="Portfolio">Portfolio</string>
-
-
+    <string name="no_internet"> No Internet</string>
+    <string name="current_value"> Current Value*</string>
+    <string name="total_investment"> Total Investment*</string>
+    <string name="today_p_l"> Today ProfitLoss*</string>
 </resources>
