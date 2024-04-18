@@ -15,8 +15,8 @@ import kotlin.coroutines.coroutineContext
 
 class PortfolioVM(private val portfolioRepo: PortfolioRepo) : ViewModel() {
 
-    private val _portFolioDetails = MutableLiveData<ApiResponse>()
-    val PortFolioDetails: LiveData<ApiResponse>
+    private val _portFolioDetails = MutableLiveData<ApiResponse?>()
+    val PortFolioDetails: LiveData<ApiResponse?>
         get() = _portFolioDetails
 
 
@@ -27,6 +27,7 @@ class PortfolioVM(private val portfolioRepo: PortfolioRepo) : ViewModel() {
                 _portFolioDetails.postValue(response)
             } else {
                 // Handle error
+                _portFolioDetails.postValue(null)
             }
         }
     }

@@ -48,6 +48,12 @@
 
         </com.facebook.shimmer.ShimmerFrameLayout>
 
+        <TextView
+            android:id="@+id/no_internet"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"/>
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view"
             android:layout_width="match_parent"

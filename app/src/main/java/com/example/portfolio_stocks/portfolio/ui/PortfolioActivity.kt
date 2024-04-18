@@ -50,16 +50,20 @@ class PortfolioActivity : BaseActivity() {
 
 
     private fun initObserver() {
-        portfolioVM.PortFolioDetails.observeNonNull(this) { ApiResponse ->
+        portfolioVM.PortFolioDetails.observe(this) { ApiResponse ->
 
             binding.shimmerLayout.stopShimmer()
             binding.shimmerLayout.isVisible = false
-            binding.recyclerView.isVisible = true
 
-            ApiResponse.data.userHolding?.let {
+            ApiResponse?.data?.userHolding?.let {
+                binding.recyclerView.isVisible = true
                 (binding.recyclerView.adapter as PortFolioAdapter).list = it
                 binding.recyclerView.adapter?.notifyDataSetChanged()
                 setBottomNavDate(ApiResponse.data)
+            } ?: run {
+                // Handle error
+                binding.noInternet.isVisible = true
+                binding.noInternet.setText(R.string.no_internet)
             }
         }
     }
